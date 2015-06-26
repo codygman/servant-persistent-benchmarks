@@ -1,0 +1,142 @@
+	Fri Jun 26 05:00 2015 Time and Allocation Profiling Report  (Final)
+
+	   persistent-query-benchmarks +RTS -p -RTS
+
+	total time  =        9.06 secs   (9061 ticks @ 1000 us, 1 processor)
+	total alloc = 4,619,808,896 bytes  (excludes profiling overheads)
+
+COST CENTRE         MODULE  %time %alloc
+
+listPeople          Main     52.0   45.4
+app                 Main     26.8   41.1
+migrateDB           Main     14.5    7.0
+main.\              Main      5.9    4.8
+listPeople.persons' Main      0.4    1.2
+
+
+                                                                                            individual     inherited
+COST CENTRE                    MODULE                                     no.     entries  %time %alloc   %time %alloc
+
+MAIN                           MAIN                                       433           0    0.2    0.0   100.0  100.0
+ main                          Main                                       867           0    0.0    0.0    99.8  100.0
+  main.\                       Main                                       868           1    5.9    4.8    99.8  100.0
+   app                         Main                                       907           1   26.8   41.1    93.8   95.2
+    unstream/resize            Data.Text.Internal.Fusion                  910       42151    0.0    0.1     0.0    0.1
+    server                     Main                                       909           1    0.0    0.0    66.9   53.9
+     listPeople                Main                                       911           1   52.0   45.4    66.9   53.9
+      listPeople.persons'      Main                                       925       42151    0.4    1.2     0.4    1.2
+      unstream/resize          Data.Text.Internal.Fusion                  924      126453    0.2    0.3     0.2    0.3
+      migrateDB                Main                                       912           0   14.3    7.0    14.3    7.0
+   mkPerson                    Main                                       881           1    0.0    0.0     0.1    0.0
+    unstream/resize            Data.Text.Internal.Fusion                  890          15    0.0    0.0     0.0    0.0
+    migrateDB                  Main                                       882           0    0.1    0.0     0.1    0.0
+   migrateDB                   Main                                       869           1    0.1    0.0     0.1    0.0
+    unstream/resize            Data.Text.Internal.Fusion                  878           2    0.0    0.0     0.0    0.0
+ CAF:main1                     Main                                       864           0    0.0    0.0     0.0    0.0
+  main                         Main                                       866           1    0.0    0.0     0.0    0.0
+ CAF:main_m1                   Main                                       835           0    0.0    0.0     0.0    0.0
+  main                         Main                                       913           0    0.0    0.0     0.0    0.0
+   main.\                      Main                                       914           0    0.0    0.0     0.0    0.0
+    app                        Main                                       915           0    0.0    0.0     0.0    0.0
+     server                    Main                                       916           0    0.0    0.0     0.0    0.0
+      listPeople               Main                                       917           0    0.0    0.0     0.0    0.0
+ CAF:main15                    Main                                       834           0    0.0    0.0     0.0    0.0
+  main                         Main                                       918           0    0.0    0.0     0.0    0.0
+   main.\                      Main                                       919           0    0.0    0.0     0.0    0.0
+    app                        Main                                       920           0    0.0    0.0     0.0    0.0
+     server                    Main                                       921           0    0.0    0.0     0.0    0.0
+      listPeople               Main                                       922           0    0.0    0.0     0.0    0.0
+ CAF:main31                    Main                                       833           0    0.0    0.0     0.0    0.0
+  main                         Main                                       883           0    0.0    0.0     0.0    0.0
+   main.\                      Main                                       884           0    0.0    0.0     0.0    0.0
+    mkPerson                   Main                                       885           0    0.0    0.0     0.0    0.0
+ CAF:main37                    Main                                       832           0    0.0    0.0     0.0    0.0
+  main                         Main                                       886           0    0.0    0.0     0.0    0.0
+   main.\                      Main                                       887           0    0.0    0.0     0.0    0.0
+    mkPerson                   Main                                       888           0    0.0    0.0     0.0    0.0
+ CAF:$fToJSONPerson1           Main                                       830           0    0.0    0.0     0.0    0.0
+  unstream/resize              Data.Text.Internal.Fusion                  927           1    0.0    0.0     0.0    0.0
+ CAF:$fToJSONPerson4           Main                                       829           0    0.0    0.0     0.0    0.0
+  unstream/resize              Data.Text.Internal.Fusion                  926           1    0.0    0.0     0.0    0.0
+ CAF:personAPI                 Main                                       827           0    0.0    0.0     0.0    0.0
+  personAPI                    Main                                       908           1    0.0    0.0     0.0    0.0
+ CAF:main42                    Main                                       826           0    0.0    0.0     0.0    0.0
+  unstream/resize              Data.Text.Internal.Fusion                  874           3    0.0    0.0     0.0    0.0
+ CAF:main53                    Main                                       823           0    0.0    0.0     0.0    0.0
+ CAF:main55                    Main                                       822           0    0.0    0.0     0.0    0.0
+  unstream/resize              Data.Text.Internal.Fusion                  876           1    0.0    0.0     0.0    0.0
+ CAF:main66                    Main                                       820           0    0.0    0.0     0.0    0.0
+ CAF:$fSelectorPerson1         Main                                       802           0    0.0    0.0     0.0    0.0
+ CAF:$fSelectorPerson2         Main                                       801           0    0.0    0.0     0.0    0.0
+ CAF:$fPersistEntityPerson53   Main                                       800           0    0.0    0.0     0.0    0.0
+  unstream/resize              Data.Text.Internal.Fusion                  889           3    0.0    0.0     0.0    0.0
+ CAF:$fPersistEntityPerson107  Main                                       799           0    0.0    0.0     0.0    0.0
+ CAF:$fPersistEntityPerson66   Main                                       794           0    0.0    0.0     0.0    0.0
+ CAF:$fPersistEntityPerson79   Main                                       791           0    0.0    0.0     0.0    0.0
+ CAF:$fPersistEntityPerson49   Main                                       775           0    0.0    0.0     0.0    0.0
+ CAF:$fConstructorPerson1      Main                                       774           0    0.0    0.0     0.0    0.0
+ CAF:$fPersistEntityPerson_dt2 Main                                       767           0    0.0    0.0     0.0    0.0
+ CAF:$fPersistEntityPerson_dt1 Main                                       763           0    0.0    0.0     0.0    0.0
+ CAF:$fPersistEntityPerson8    Main                                       760           0    0.0    0.0     0.0    0.0
+ CAF:$fPersistEntityPerson_dt  Main                                       757           0    0.0    0.0     0.0    0.0
+ CAF:main154                   Main                                       749           0    0.0    0.0     0.0    0.0
+  main                         Main                                       870           0    0.0    0.0     0.0    0.0
+ CAF:main27                    Main                                       748           0    0.0    0.0     0.0    0.0
+  main                         Main                                       879           0    0.0    0.0     0.0    0.0
+   main.\                      Main                                       880           0    0.0    0.0     0.0    0.0
+ CAF:main32                    Main                                       747           0    0.0    0.0     0.0    0.0
+  main                         Main                                       891           0    0.0    0.0     0.0    0.0
+   main.\                      Main                                       892           0    0.0    0.0     0.0    0.0
+    mkPerson                   Main                                       893           0    0.0    0.0     0.0    0.0
+ CAF:main33                    Main                                       746           0    0.0    0.0     0.0    0.0
+  main                         Main                                       894           0    0.0    0.0     0.0    0.0
+   main.\                      Main                                       895           0    0.0    0.0     0.0    0.0
+    mkPerson                   Main                                       896           0    0.0    0.0     0.0    0.0
+ CAF:main35                    Main                                       745           0    0.0    0.0     0.0    0.0
+  main                         Main                                       897           0    0.0    0.0     0.0    0.0
+   main.\                      Main                                       898           0    0.0    0.0     0.0    0.0
+    mkPerson                   Main                                       899           0    0.0    0.0     0.0    0.0
+ CAF:main26                    Main                                       744           0    0.0    0.0     0.0    0.0
+  main                         Main                                       900           0    0.0    0.0     0.0    0.0
+   main.\                      Main                                       901           0    0.0    0.0     0.0    0.0
+ CAF                           Servant.Server.Internal                    743           0    0.0    0.0     0.0    0.0
+ CAF                           Network.Wai.Handler.Warp.Settings          739           0    0.0    0.0     0.0    0.0
+ CAF                           Network.Wai.Handler.Warp.Types             738           0    0.0    0.0     0.0    0.0
+ CAF                           Network.Wai.Handler.Warp.Header            732           0    0.0    0.0     0.0    0.0
+ CAF                           Network.Wai.Handler.Warp.Request           729           0    0.0    0.0     0.0    0.0
+ CAF                           Network.Wai.Handler.Warp.Response          727           0    0.0    0.0     0.0    0.0
+ CAF                           Network.Wai.Handler.Warp.ResponseHeader    726           0    0.0    0.0     0.0    0.0
+ CAF                           Network.HTTP.Date.Converter                716           0    0.0    0.0     0.0    0.0
+ CAF                           Network.HTTP.Date.Formatter                715           0    0.0    0.0     0.0    0.0
+ CAF                           Servant.API.ContentTypes                   709           0    0.0    0.0     0.0    0.0
+ CAF                           Network.HTTP.Types.Header                  695           0    0.0    0.0     0.0    0.0
+ CAF                           Network.HTTP.Types.Method                  694           0    0.0    0.0     0.0    0.0
+ CAF                           Network.HTTP.Types.Status                  693           0    0.0    0.0     0.0    0.0
+ CAF                           Network.HTTP.Types.URI                     692           0    0.0    0.0     0.0    0.0
+ CAF                           Network.HTTP.Media.MediaType.Internal      686           0    0.0    0.0     0.0    0.0
+ CAF                           Network.HTTP.Media.Utils                   684           0    0.0    0.0     0.0    0.0
+ CAF                           Database.Persist.MySQL                     676           0    0.0    0.0     0.0    0.0
+  unstream/resize              Data.Text.Internal.Fusion                  873          25    0.0    0.0     0.0    0.0
+ CAF                           Database.MySQL.Simple.Param                674           0    0.0    0.0     0.0    0.0
+ CAF                           Database.MySQL.Simple.Result               673           0    0.0    0.0     0.0    0.0
+ CAF                           Database.MySQL.Base                        665           0    0.0    0.0     0.0    0.0
+ CAF                           Database.MySQL.Base.Types                  663           0    0.0    0.0     0.0    0.0
+ CAF                           Database.Persist.Quasi                     661           0    0.0    0.0     0.0    0.0
+  unstream/resize              Data.Text.Internal.Fusion                  875           1    0.0    0.0     0.0    0.0
+ CAF                           Database.Persist.Class.PersistQuery        658           0    0.0    0.0     0.0    0.0
+ CAF                           Database.Persist.Sql.Internal              653           0    0.0    0.0     0.0    0.0
+  unstream/resize              Data.Text.Internal.Fusion                  877           5    0.0    0.0     0.0    0.0
+ CAF                           Database.Persist.Sql.Orphan.PersistQuery   648           0    0.0    0.0     0.0    0.0
+  unstream/resize              Data.Text.Internal.Fusion                  923           2    0.0    0.0     0.0    0.0
+ CAF                           Data.Pool                                  644           0    0.0    0.0     0.0    0.0
+ CAF                           Data.Streaming.Network.Internal            628           0    0.0    0.0     0.0    0.0
+ CAF                           Blaze.ByteString.Builder.HTTP              608           0    0.0    0.0     0.0    0.0
+ CAF                           Data.Text.Array                            543           0    0.0    0.0     0.0    0.0
+ CAF                           Data.Text.Internal                         539           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.IO.Encoding                            492           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.IO.Handle.Text                         489           0    0.0    0.0     0.0    0.0
+ CAF                           Data.Version                               472           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.IO.Handle.FD                           463           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.TopHandler                             460           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.IO.Encoding.Iconv                      451           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.Conc.Signal                            447           0    0.0    0.0     0.0    0.0
